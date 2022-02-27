@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ingredientsFragment">
+    <fragment
+        android:id="@+id/ingredientsFragment"
+        android:name="com.example.revercipe2.ingredientsFragment"
+        android:label="ingredientsFragment" />
+    <fragment
+        android:id="@+id/recipesFragment"
+        android:name="com.example.revercipe2.recipesFragment"
+        android:label="recipesFragment" />
+    <fragment
+        android:id="@+id/mypageFragment"
+        android:name="com.example.revercipe2.mypageFragment"
+        android:label="mypageFragment" />
+</navigation>

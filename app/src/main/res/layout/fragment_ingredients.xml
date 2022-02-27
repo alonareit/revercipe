@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/search_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+
+
+        android:background="@drawable/rounded_edittext"
+        android:drawableEnd="@drawable/ic_search"
+        android:padding="8dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_et">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/all_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginRight="8dp"
+                android:backgroundTint="@color/light_gray"
+                android:drawableLeft="@drawable/all"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="All"
+                android:textColor="@color/dark_gray"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/vegetables_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:backgroundTint="@color/light_gray"
+                android:drawableLeft="@drawable/vegetables"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="Vegetables"
+                android:textColor="@color/dark_gray"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/carbohydrate_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginRight="8dp"
+                android:backgroundTint="@color/light_gray"
+                android:drawableLeft="@drawable/carbohydrates"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="Carbohydrate"
+                android:textColor="@color/dark_gray"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/dairy_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginRight="8dp"
+                android:backgroundTint="@color/light_gray"
+                android:drawableLeft="@drawable/dairy"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="Dairy"
+                android:textColor="@color/dark_gray"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/other_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/light_gray"
+                android:drawableLeft="@drawable/others"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="Other"
+                android:textColor="@color/dark_gray"
+                app:cornerRadius="10dp" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ingredientsSelected_rv"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ingredientsList_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="8dp"
+        android:paddingBottom="240dp"
+        app:layout_constraintTop_toBottomOf="@+id/ingredientsSelected_rv"
+        tools:layout_editor_absoluteX="0dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

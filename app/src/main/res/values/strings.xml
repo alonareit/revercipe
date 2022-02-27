@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">revercipe2</string>
+
+    <string name="ingredients">Ingredients</string>
+    <string name="recipes">Recipes</string>
+    <string name="mypage">My page</string>
+</resources>
