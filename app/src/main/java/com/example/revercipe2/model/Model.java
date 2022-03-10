@@ -1,19 +1,28 @@
 package com.example.revercipe2.model;
 
-import android.util.Log;
+        import android.os.Handler;
+        import android.os.Looper;
+        import android.util.Log;
 
-import java.util.AbstractMap;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+        import androidx.core.os.HandlerCompat;
+
+        import java.util.AbstractMap;
+        import java.util.ArrayList;
+        import java.util.Collections;
+        import java.util.HashMap;
+        import java.util.List;
+        import java.util.Map;
+        import java.util.concurrent.Executor;
+        import java.util.concurrent.Executors;
 
 public class Model {
 
 
     public static final Model instance = new Model();
 
+    Executor executor =Executors.newFixedThreadPool(1);
+    Handler mainThread = HandlerCompat.createAsync(Looper.getMainLooper());
+    ModelFirebase modelFirebase = new ModelFirebase();
     private Model() {
         //categories for hashmap
 
@@ -79,9 +88,31 @@ public class Model {
     List<Ingredients> vegetablesList = new ArrayList<Ingredients>();
     List<Ingredients> dairyList = new ArrayList<Ingredients>();
 
-    public List<Ingredients> getAllingredients() {
-        return allingredients;
+
+    public interface GetAllIngredientsListener{
+        void onComplete(List<Ingredients> list);
     }
+    public void getAllIngredients(GetAllIngredientsListener listener) {
+        executor.execute(()->{
+            List<Ingredients> list = AppLocalDb.db.ingredientsDao().getAll();
+            mainThread.post(()->{
+                listener.onComplete(list);
+            });
+        });
+    }
+
+//    public interface AddIngredientListener{
+//        void onComplete();
+//    }
+//    public void addIngredient(Ingredients ingredient, AddIngredientListener listener){
+//        executor.execute(()->{
+//            AppLocalDb.db.ingredientsDao().insertAll(ingredient);
+//            mainThread.post(()->{
+//                listener.onComplete();
+//            });
+//        });
+//    }
+
 
     public List<Ingredients> getVegetablesList() {
         return vegetablesList;
@@ -91,6 +122,5 @@ public class Model {
         return dairyList;
     }
 }
-
 
 

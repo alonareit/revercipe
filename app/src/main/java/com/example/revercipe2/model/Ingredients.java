@@ -1,13 +1,17 @@
 package com.example.revercipe2.model;
 
 import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+@Entity
 public class Ingredients implements Comparable<Ingredients>{
 
+    @PrimaryKey
+    @NonNull
     String name = "";
     String imgPath;
     boolean flag = false;
