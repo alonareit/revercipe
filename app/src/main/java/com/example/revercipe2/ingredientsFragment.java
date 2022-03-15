@@ -50,7 +50,7 @@ public class ingredientsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_ingredients,container,false);
-//        categoriesList = Model.instance.getCategoriesList();
+ //       categoriesList = Model.instance.getCategoriesList();
         selectedItemsList = new ArrayList<>();
 
         RecyclerView ingredientslist_rv = view.findViewById(R.id.ingredientsList_rv);
@@ -106,7 +106,7 @@ public class ingredientsFragment extends Fragment {
         all_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              //  adapter.filterList(Model.instance.getAllIngredients());
+          //      adapter.filterList(Model.instance.getAllIngredients());
             }
         });
 

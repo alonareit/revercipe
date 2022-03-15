@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "638383474768",
-    "project_id": "android2022mattialona",
-    "storage_bucket": "android2022mattialona.appspot.com"
+    "project_number": "1079867650791",
+    "project_id": "applicationdev-c0d5a",
+    "storage_bucket": "applicationdev-c0d5a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:638383474768:android:e1834fe1cd0706554ea955",
+        "mobilesdk_app_id": "1:1079867650791:android:16c3f190c1c92954cee842",
         "android_client_info": {
           "package_name": "com.example.revercipe2"
         }
       },
       "oauth_client": [
         {
-          "client_id": "638383474768-ds99cflesb8g71ap7n36tjbsda5qon92.apps.googleusercontent.com",
+          "client_id": "1079867650791-tal4lhotk24cb8kcdonrgassldhs0b70.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAEPTROQaViFZMp9U064xCPYepNaS1WaUw"
+          "current_key": "AIzaSyD29eCYCFCCZOShov6aJQn3mklrX8EucM0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "638383474768-ds99cflesb8g71ap7n36tjbsda5qon92.apps.googleusercontent.com",
+              "client_id": "1079867650791-tal4lhotk24cb8kcdonrgassldhs0b70.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

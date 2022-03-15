@@ -93,33 +93,25 @@ public class Model {
         void onComplete(List<Ingredients> list);
     }
     public void getAllIngredients(GetAllIngredientsListener listener) {
-        executor.execute(()->{
-            List<Ingredients> list = AppLocalDb.db.ingredientsDao().getAll();
-            mainThread.post(()->{
-                listener.onComplete(list);
-            });
-        });
+        modelFirebase.getAllIngredients(listener);
     }
 
-//    public interface AddIngredientListener{
-//        void onComplete();
-//    }
-//    public void addIngredient(Ingredients ingredient, AddIngredientListener listener){
-//        executor.execute(()->{
-//            AppLocalDb.db.ingredientsDao().insertAll(ingredient);
-//            mainThread.post(()->{
-//                listener.onComplete();
-//            });
-//        });
-//    }
+    public interface AddIngredientListener{
+        void onComplete();
+    }
+    public void addIngredient(Ingredients ingredient, AddIngredientListener listener){
+        modelFirebase.addIngredient(ingredient,listener);
+    }
 
 
     public List<Ingredients> getVegetablesList() {
-        return vegetablesList;
+        modelFirebase.getVegetableList();
+        return null;
     }
 
     public List<Ingredients> getDairyList() {
-        return dairyList;
+        modelFirebase.getDairyList();
+        return null;
     }
 }
 
