@@ -336,7 +336,7 @@ public class ingredientsFragment extends Fragment {
 //            }
 //            else {
 ////                holder.ingImgIv.setVisibility(View.GONE);
-//            }
+//           }
 
         }
 
