@@ -1,33 +1,33 @@
- package com.example.revercipe2;
+package com.example.revercipe2;
 
-        import android.graphics.Color;
-        import android.os.Bundle;
-        import android.text.Editable;
-        import android.text.TextWatcher;
-        import android.util.Log;
-        import android.view.LayoutInflater;
-        import android.view.View;
-        import android.view.ViewGroup;
-        import android.widget.Button;
-        import android.widget.CheckBox;
-        import android.widget.CompoundButton;
-        import android.widget.EditText;
-        import android.widget.ImageView;
-        import android.widget.TextView;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-        import androidx.annotation.NonNull;
-        import androidx.annotation.Nullable;
-        import androidx.fragment.app.Fragment;
-        import androidx.recyclerview.widget.LinearLayoutManager;
-        import androidx.recyclerview.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-        import com.example.revercipe2.model.Ingredients;
-        import com.example.revercipe2.model.Model;
+import com.example.revercipe2.model.Ingredients;
+import com.example.revercipe2.model.Model;
 
-        import java.util.ArrayList;
-        import java.util.List;
-        import java.util.Map;
-        import com.squareup.picasso.Picasso;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import com.squareup.picasso.Picasso;
 
 
 public class ingredientsFragment extends Fragment {
@@ -50,7 +50,7 @@ public class ingredientsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_ingredients,container,false);
- //       categoriesList = Model.instance.getCategoriesList();
+        //       categoriesList = Model.instance.getCategoriesList();
         selectedItemsList = new ArrayList<>();
 
         RecyclerView ingredientslist_rv = view.findViewById(R.id.ingredientsList_rv);
@@ -106,7 +106,7 @@ public class ingredientsFragment extends Fragment {
         all_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-          //      adapter.filterList(Model.instance.getAllIngredients());
+                //      adapter.filterList(Model.instance.getAllIngredients());
             }
         });
 
@@ -199,6 +199,7 @@ public class ingredientsFragment extends Fragment {
                         selectedItemsList.remove(ingredient);
 
                     }
+                    adapter.notifyDataSetChanged();
                 }
             });
 
@@ -206,7 +207,10 @@ public class ingredientsFragment extends Fragment {
 
         @Override
         public int getItemCount() {
-            return allingredients.size();
+            if(allingredients!=null){
+                return allingredients.size();
+            }
+            return 0;
         }
 
         public void filterList(List<Ingredients> filteredList){

@@ -105,13 +105,11 @@ public class Model {
 
 
     public List<Ingredients> getVegetablesList() {
-        modelFirebase.getVegetableList();
-        return null;
+       return vegetablesList;
     }
 
     public List<Ingredients> getDairyList() {
-        modelFirebase.getDairyList();
-        return null;
+       return dairyList;
     }
 }
 
